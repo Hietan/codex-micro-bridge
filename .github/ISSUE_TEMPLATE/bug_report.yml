@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a reproducible bridge or compatibility problem
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include prompts, responses, task IDs, credentials, CDP dumps, or unsanitized logs."
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Release, macOS, Node, ChatGPT Desktop, QMK, keyboard, and firmware versions
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed private content and credentials from this report.
+          required: true
+        - label: I confirmed this is not a security vulnerability.
+          required: true

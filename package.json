@@ -1,0 +1,55 @@
+{
+  "name": "codex-micro-bridge",
+  "version": "0.1.0",
+  "description": "Local CLI bridge for emulating Codex Micro input events",
+  "type": "module",
+  "bin": {
+    "codex-micro-bridge": "./dist/src/cli.js"
+  },
+  "files": [
+    "dist/src",
+    "README.md",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "THIRD_PARTY_NOTICES.md",
+    "docs",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "pnpm run build && node --test dist/test/*.test.js",
+    "start": "node dist/src/cli.js start",
+    "prepack": "pnpm run build"
+  },
+  "engines": {
+    "node": ">=22.4"
+  },
+  "keywords": [
+    "codex",
+    "codex-micro",
+    "qmk",
+    "raw-hid",
+    "bridge",
+    "cdp"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hietan/codex-micro-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hietan/codex-micro-bridge/issues"
+  },
+  "homepage": "https://github.com/Hietan/codex-micro-bridge#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "dependencies": {
+    "node-hid": "^3.4.0"
+  }
+}
